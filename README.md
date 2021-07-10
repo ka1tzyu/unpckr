@@ -55,3 +55,4 @@ You can always use `unpckr -h` or `unpckr --help` to get actual list of keys and
 8. Unit tests for all filters
 9. Logging 
 10. Advance patterns support
+11. Integrate GitHub Actions
