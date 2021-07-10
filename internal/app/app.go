@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/nekovalue/unpckr/internal/argparser"
 	"github.com/nekovalue/unpckr/internal/config"
+	"github.com/nekovalue/unpckr/internal/processor"
 	"os"
 )
 
@@ -13,5 +14,9 @@ func Run(args []string) {
 		fmt.Println(parser.Usage(err))
 		os.Exit(0)
 	}
-	fmt.Println(config.CONFIG)
+
+	err = processor.Process(&config.CONFIG)
+	if err != nil {
+		fmt.Println("appError: ", err)
+	}
 }

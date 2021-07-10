@@ -40,6 +40,18 @@ func ParseArguments(args []string) (argparse.Parser, error) {
 			Help:     "Rename all files trough specified pattern",
 			Default:  "none",
 		})
+	config.CONFIG.Log = parser.Flag("l", "log",
+		&argparse.Options{
+			Required: false,
+			Help:     "Show logging stream",
+			Default:  false,
+		})
+	config.CONFIG.LogLevel = parser.Selector("", "log-level", []string{"INFO", "WARN", "none"},
+		&argparse.Options{
+			Required: false,
+			Help:     "Logging level",
+			Default:  "none",
+		})
 	config.CONFIG.RemoveDuplicates = parser.Flag("", "remove-duplicates",
 		&argparse.Options{
 			Required: false,

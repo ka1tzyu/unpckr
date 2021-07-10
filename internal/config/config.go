@@ -2,22 +2,26 @@ package config
 
 import (
 	"fmt"
+	"github.com/nekovalue/unpckr/internal/storage"
 )
 
-var CONFIG configType
+var CONFIG ConfigurationType
 
-type configType struct {
+type ConfigurationType struct {
+	Storage          storage.Storage
 	Sources          *[]string
 	Destination      *string
 	ConflictRename   *string
 	RenameAll        *string
 	Pattern          *string
+	Log              *bool
+	LogLevel         *string
 	RemoveDuplicates *bool
 	Unzip            *bool
 }
 
-func (cfg configType) String() string {
+func (cfg ConfigurationType) String() string {
 	return fmt.Sprintf("ConfigType(Sources: %v; Destination: %v; ConflictRename: %v; RenameAll: %v; "+
-		"Pattern: %v; RemoveDuplicates: %v; Unzip: %v)", *cfg.Sources, *cfg.Destination, *cfg.ConflictRename,
-		*cfg.RenameAll, *cfg.Pattern, *cfg.RemoveDuplicates, *cfg.Unzip)
+		"Pattern: %v; Log: %v; LogLevel: %v; RemoveDuplicates: %v; Unzip: %v)", *cfg.Sources, *cfg.Destination, *cfg.ConflictRename,
+		*cfg.RenameAll, *cfg.Pattern, *cfg.Log, *cfg.LogLevel, *cfg.RemoveDuplicates, *cfg.Unzip)
 }
