@@ -25,7 +25,7 @@ func (store Storage) getDestinationOfSource(source string) string {
 }
 
 func (store Storage) String() string {
-	ret := fmt.Sprintf("StorageType\n->Sources")
+	ret := fmt.Sprintf("StorageType\n->Sources\n")
 	for i, src := range store.Sources {
 		ret += fmt.Sprintf("--> %d: [%v]\n", i, src)
 	}
