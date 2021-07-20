@@ -47,7 +47,7 @@ You can always use `unpckr -h` or `unpckr --help` to get actual list of keys and
 ## TODO
 1. ~~Unit tests for *Argument parser*~~
 2. Errors for main package
-3. Copier closure handler
+3. ~~Copier closure handler~~
 4. Conflict rename function 
 5. Rename all function
 6. Unzip function
@@ -57,3 +57,4 @@ You can always use `unpckr -h` or `unpckr --help` to get actual list of keys and
 10. Advance patterns support
 11. Integrate GitHub Actions
 12. Comment all functions
+13. Fatal log for copier functions

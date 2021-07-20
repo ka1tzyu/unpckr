@@ -23,10 +23,7 @@ func singleCopy(src, dst string) error {
 	}
 
 	defer func(originalFile *os.File) {
-		err := originalFile.Close()
-		//TODO: Closure handler
-		if err != nil {
-		}
+		_ = originalFile.Close()
 	}(originalFile)
 
 	newFile, err := os.Create(dst)
@@ -35,9 +32,7 @@ func singleCopy(src, dst string) error {
 	}
 
 	defer func(newFile *os.File) {
-		err := newFile.Close()
-		if err != nil {
-		}
+		_ = newFile.Close()
 	}(newFile)
 
 	_, err = io.Copy(newFile, originalFile)
