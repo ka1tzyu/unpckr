@@ -8,6 +8,11 @@ import (
 )
 
 func TestParseArguments(t *testing.T) {
+	// Prepare
+	err := os.Mkdir("temp", 0755)
+	err = os.Mkdir("DemonLordDante", 0755)
+	err = os.Mkdir("gos", 0755)
+
 	// Arrange
 	testTable := []struct {
 		fakeArgs       []string
@@ -18,34 +23,34 @@ func TestParseArguments(t *testing.T) {
 			fakeArgs: []string{
 				"unpckr.exe",
 				"-s",
-				"D:\\dev\\go\\go-data\\unpckr-data\\DemonLordDante"},
-			expectedSource: []string{"D:\\dev\\go\\go-data\\unpckr-data\\DemonLordDante"},
+				"DemonLordDante"},
+			expectedSource: []string{"DemonLordDante"},
 			fakeConfig:     config.ConfigurationType{},
 		},
 		{
 			fakeArgs: []string{
 				"unpckr.exe",
 				"-s",
-				"D:\\dev\\go\\go-data\\unpckr-data\\DemonLordDante",
+				"DemonLordDante",
 				"-z",
 				"-d",
 				"temp"},
-			expectedSource: []string{"D:\\dev\\go\\go-data\\unpckr-data\\DemonLordDante"},
+			expectedSource: []string{"DemonLordDante"},
 			fakeConfig:     config.ConfigurationType{},
 		},
 		{
 			fakeArgs: []string{
 				"unpckr.exe",
 				"-s",
-				"D:\\dev\\go\\go-data\\unpckr-data\\DemonLordDante",
+				"DemonLordDante",
 				"-s",
-				"D:\\dev\\go",
+				"gos",
 				"-z",
 				"-d",
 				"temp"},
 			expectedSource: []string{
-				"D:\\dev\\go\\go-data\\unpckr-data\\DemonLordDante",
-				"D:\\dev\\go"},
+				"DemonLordDante",
+				"gos"},
 			fakeConfig: config.ConfigurationType{},
 		},
 	}
@@ -66,7 +71,9 @@ func TestParseArguments(t *testing.T) {
 
 	// Cleaning
 
-	err := os.Remove("temp")
+	err = os.Remove("temp")
+	err = os.Remove("DemonLordDante")
+	err = os.Remove("gos")
 	if err != nil {
 		t.Errorf("Directory remove error %v", err.Error())
 	}
