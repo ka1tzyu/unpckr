@@ -56,3 +56,4 @@ You can always use `unpckr -h` or `unpckr --help` to get actual list of keys and
 9. Logging 
 10. Advance patterns support
 11. Integrate GitHub Actions
+12. Comment all functions
