@@ -21,7 +21,7 @@ func TestParseArguments(t *testing.T) {
 	}{
 		{
 			fakeArgs: []string{
-				"unpckr.exe",
+				"unpckr",
 				"-s",
 				"DemonLordDante"},
 			expectedSource: []string{"DemonLordDante"},
@@ -29,7 +29,7 @@ func TestParseArguments(t *testing.T) {
 		},
 		{
 			fakeArgs: []string{
-				"unpckr.exe",
+				"unpckr",
 				"-s",
 				"DemonLordDante",
 				"-z",
@@ -40,7 +40,7 @@ func TestParseArguments(t *testing.T) {
 		},
 		{
 			fakeArgs: []string{
-				"unpckr.exe",
+				"unpckr",
 				"-s",
 				"DemonLordDante",
 				"-s",
