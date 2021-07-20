@@ -9,7 +9,7 @@ import (
 )
 
 func Run(args []string) {
-	parser, err := argparser.ParseArguments(args)
+	parser, err := argparser.ParseArguments(args, &config.CONFIG)
 	if err != nil && &parser != nil {
 		fmt.Println(parser.Usage(err))
 		os.Exit(0)
