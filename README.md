@@ -55,7 +55,7 @@ You can always use `unpckr -h` or `unpckr --help` to get actual list of keys and
 8. Unit tests for all filters
 9. Logging 
 10. Advance patterns support
-11. Integrate GitHub Actions
+11. ~~Integrate GitHub Actions~~
 12. Comment all functions
 13. Fatal log for copier functions
 14. Move some packages to pkg folder
