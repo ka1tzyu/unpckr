@@ -18,8 +18,14 @@ func Process(config *config.ConfigurationType) error {
 		return err
 	}
 
-	switch {
-	case *config.ConflictRename == "simpleRandom":
+	if *config.RenameAll == "hash" {
+		err = rename.HashingDestinations(config)
+		if err != nil {
+			return err
+		}
+	}
+
+	if *config.ConflictRename == "simpleRandom" {
 		rename.RandomizeConflicts(config)
 	}
 
