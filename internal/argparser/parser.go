@@ -21,7 +21,7 @@ func ParseArguments(args []string, cfg *config.ConfigurationType) (argparse.Pars
 			Help:     "Destination folder",
 			Default:  "temp",
 		})
-	cfg.ConflictRename = parser.Selector("c", "conflict-rename", []string{"simpleRandom"},
+	cfg.ConflictRename = parser.Selector("c", "conflict-rename", []string{"simpleRandom", "none"},
 		&argparse.Options{
 			Required: false,
 			Help:     "Conflict rename strategy :[simpleRandom - add to filename 10 random characters]",
