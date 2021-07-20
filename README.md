@@ -49,7 +49,7 @@ You can always use `unpckr -h` or `unpckr --help` to get actual list of keys and
 2. Errors for main package
 3. ~~Copier closure handler~~
 4. ~~Conflict rename function~~
-5. Rename all function
+5. ~~Rename all function~~
 6. Unzip function
 7. Duplicate remove function
 8. Unit tests for all filters
