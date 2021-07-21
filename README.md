@@ -41,21 +41,21 @@ unpckr -s "C:\Users\Folder with Whitespace\photos" -s D:\files\photos\holidays -
 
 
 ## Help
-You can always use `unpckr -h` or `unpckr --help` to get actual list of keys and settings. Also you can ask me everything trough [Issues](https://github.com/nekovalue/unpckr/issues)
+You can always use `unpckr -h` or `unpckr --help` to get actual list of keys and settings. Also, you can ask me everything trough [Issues](https://github.com/nekovalue/unpckr/issues)
 
 
 ## TODO
 1. ~~Unit tests for *Argument parser*~~
-2. Errors for main package
 3. ~~Copier closure handler~~
 4. ~~Conflict rename function~~
 5. ~~Rename all function~~
-6. Unzip function
+6. ~~Unzip function~~
 7. ~~Duplicate remove function~~
-8. Unit tests for all filters
-9. Logging 
-10. Advance patterns support
-11. ~~Integrate GitHub Actions~~
-12. Comment all functions
-13. Fatal log for copier functions
-14. Move some packages to pkg folder
+8. ~~Integrate GitHub Actions~~
+9. Advance patterns support
+10. Logging
+11. Comment all functions
+12. Fatal log for copier functions
+13. Move some packages to pkg folder
+14. Unit tests for all filters
+    
