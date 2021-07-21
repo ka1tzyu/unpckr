@@ -40,6 +40,10 @@ unpckr -s "C:\Users\Folder with Whitespace\photos" -s D:\files\photos\holidays -
 ```
 
 
+## Order of operations/filters
+***Will be created soon***
+
+
 ## Help
 You can always use `unpckr -h` or `unpckr --help` to get actual list of keys and settings. Also, you can ask me everything trough [Issues](https://github.com/nekovalue/unpckr/issues)
 
@@ -52,10 +56,12 @@ You can always use `unpckr -h` or `unpckr --help` to get actual list of keys and
 6. ~~Unzip function~~
 7. ~~Duplicate remove function~~
 8. ~~Integrate GitHub Actions~~
-9. Advance patterns support
+9. Advanced patterns support
 10. Logging
-11. Comment all functions
-12. Fatal log for copier functions
-13. Move some packages to pkg folder
-14. Unit tests for all filters
+11. Write operations order in README
+12. Release 1.0
+13. Comment all functions
+14. Fatal log for copier functions
+15. Move some packages to pkg folder
+16. Unit tests for all filters
     
