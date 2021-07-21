@@ -18,10 +18,12 @@ type ConfigurationType struct {
 	LogLevel         *string
 	RemoveDuplicates *bool
 	Unzip            *bool
+	UnzipPasses      *int
 }
 
 func (cfg ConfigurationType) String() string {
 	return fmt.Sprintf("ConfigType(Sources: %v; Destination: %v; ConflictRename: %v; RenameAll: %v; "+
-		"Pattern: %v; Log: %v; LogLevel: %v; RemoveDuplicates: %v; Unzip: %v)", *cfg.Sources, *cfg.Destination, *cfg.ConflictRename,
-		*cfg.RenameAll, *cfg.Pattern, *cfg.Log, *cfg.LogLevel, *cfg.RemoveDuplicates, *cfg.Unzip)
+		"Pattern: %v; Log: %v; LogLevel: %v; RemoveDuplicates: %v; Unzip: %v; UnzipPasses: %v)",
+		*cfg.Sources, *cfg.Destination, *cfg.ConflictRename, *cfg.RenameAll, *cfg.Pattern, *cfg.Log, *cfg.LogLevel,
+		*cfg.RemoveDuplicates, *cfg.Unzip, *cfg.UnzipPasses)
 }

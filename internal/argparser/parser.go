@@ -64,6 +64,12 @@ func ParseArguments(args []string, cfg *config.ConfigurationType) (argparse.Pars
 			Help:     "Unzip all archives from the sources",
 			Default:  false,
 		})
+	cfg.UnzipPasses = parser.Int("", "unzip-passes",
+		&argparse.Options{
+			Required: false,
+			Help:     "How many times pass the source files for unzip",
+			Default:  1,
+		})
 
 	err := parser.Parse(args)
 
