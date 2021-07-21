@@ -27,7 +27,7 @@ func HashingDestinations(config *config.ConfigurationType) error {
 		hash, _ := HashFileMD5(config.Storage.Sources[i])
 
 		newFileNameParts := strings.Split(value, ".")
-		newFileName := getPathWithoutFileName(value) + hash + "." + newFileNameParts[len(newFileNameParts)-1]
+		newFileName := GetPathWithoutFileName(value) + hash + "." + newFileNameParts[len(newFileNameParts)-1]
 
 		config.Storage.Destinations[i] = newFileName
 	}

@@ -8,8 +8,10 @@ import (
 func RemoveDuplicates(config *config.ConfigurationType) {
 	duplicatesToRemove := scanDuplicates(config.Storage.Sources)
 
+	indexOffset := 0
 	for _, value := range duplicatesToRemove {
-		config.Storage.RemoveStoragePairByIndex(value)
+		config.Storage.RemoveStoragePairByIndex(value - indexOffset)
+		indexOffset++
 	}
 }
 

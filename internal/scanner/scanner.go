@@ -1,4 +1,4 @@
-package processor
+package scanner
 
 import (
 	"github.com/nekovalue/unpckr/internal/config"
@@ -6,15 +6,17 @@ import (
 	"path/filepath"
 )
 
-func scanSources(config *config.ConfigurationType) error {
+func ScanSources(config *config.ConfigurationType) error {
 	for _, src := range *config.Sources {
-		err := scanDirectory(src, config)
-		return err
+		err := ScanDirectory(src, config)
+		if err != nil {
+			return err
+		}
 	}
 	return nil
 }
 
-func scanDirectory(dir string, config *config.ConfigurationType) error {
+func ScanDirectory(dir string, config *config.ConfigurationType) error {
 	err := filepath.WalkDir(dir, func(path string, d fs.DirEntry, err error) error {
 		if err == nil {
 			if !d.IsDir() {
