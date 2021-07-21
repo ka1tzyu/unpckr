@@ -3,6 +3,8 @@ package storage
 import (
 	"fmt"
 	"github.com/nekovalue/unpckr/internal/tools"
+	"os"
+	"strings"
 )
 
 type Storage struct {
@@ -24,6 +26,19 @@ func (store *Storage) RemoveStoragePairByIndex(i int) {
 	store.Destinations = tools.RemoveSliceElementByIndex(store.Destinations, i)
 }
 
+func (store *Storage) ClearStorageDestinations() {
+	store.Destinations = []string{}
+}
+
+func (store *Storage) GenerateDestinations(path string) error {
+	for _, src := range store.Sources {
+		filename := strings.Split(src, string(os.PathSeparator))
+		dest := path + string(os.PathSeparator) + filename[len(filename)-1]
+		store.AppendDestination(dest)
+	}
+	return nil
+}
+
 func (store Storage) getDestinationOfSource(source string) string {
 	for i := range store.Sources {
 		if store.Sources[i] == source {
@@ -33,7 +48,7 @@ func (store Storage) getDestinationOfSource(source string) string {
 	return ""
 }
 
-func (store Storage) getIndexOfSource(source string) int {
+func (store Storage) GetIndexOfSource(source string) int {
 	for i, value := range store.Sources {
 		if source == value {
 			return i

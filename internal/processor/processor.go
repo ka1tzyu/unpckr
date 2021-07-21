@@ -12,7 +12,7 @@ func Process(config *config.ConfigurationType) error {
 		return err
 	}
 
-	err = generateDestinations(config)
+	err = config.Storage.GenerateDestinations(*config.Destination)
 	if err != nil {
 		return err
 	}
@@ -27,7 +27,7 @@ func Process(config *config.ConfigurationType) error {
 		return err
 	}
 
-	fmt.Println("Done!")
+	fmt.Println("All work done!")
 
 	return nil
 }
