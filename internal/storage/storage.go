@@ -33,6 +33,15 @@ func (store Storage) getDestinationOfSource(source string) string {
 	return ""
 }
 
+func (store Storage) getIndexOfSource(source string) int {
+	for i, value := range store.Sources {
+		if source == value {
+			return i
+		}
+	}
+	return -1
+}
+
 func (store Storage) String() string {
 	ret := fmt.Sprintf("StorageType\n->Sources\n")
 	for i, src := range store.Sources {
