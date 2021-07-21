@@ -1,6 +1,9 @@
 package storage
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/nekovalue/unpckr/internal/tools"
+)
 
 type Storage struct {
 	Sources      []string
@@ -13,6 +16,12 @@ func (store *Storage) AppendSource(source string) {
 
 func (store *Storage) AppendDestination(destination string) {
 	store.Destinations = append(store.Destinations, destination)
+}
+
+// RemoveStoragePairByIndex Removes pair of Destination and Source
+func (store *Storage) RemoveStoragePairByIndex(i int) {
+	store.Sources = tools.RemoveSliceElementByIndex(store.Sources, i)
+	store.Destinations = tools.RemoveSliceElementByIndex(store.Destinations, i)
 }
 
 func (store Storage) getDestinationOfSource(source string) string {

@@ -24,7 +24,7 @@ func RandomizeConflicts(config *config.ConfigurationType) {
 
 func HashingDestinations(config *config.ConfigurationType) error {
 	for i, value := range config.Storage.Destinations {
-		hash, _ := hashFileMD5(config.Storage.Sources[i])
+		hash, _ := HashFileMD5(config.Storage.Sources[i])
 
 		newFileNameParts := strings.Split(value, ".")
 		newFileName := getPathWithoutFileName(value) + hash + "." + newFileNameParts[len(newFileNameParts)-1]

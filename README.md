@@ -51,7 +51,7 @@ You can always use `unpckr -h` or `unpckr --help` to get actual list of keys and
 4. ~~Conflict rename function~~
 5. ~~Rename all function~~
 6. Unzip function
-7. Duplicate remove function
+7. ~~Duplicate remove function~~
 8. Unit tests for all filters
 9. Logging 
 10. Advance patterns support

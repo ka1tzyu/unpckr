@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-func hashFileMD5(filePath string) (string, error) {
+func HashFileMD5(filePath string) (string, error) {
 	//Initialize variable returnMD5String now in case an error has to be returned
 	var returnMD5String string
 
