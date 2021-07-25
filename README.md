@@ -6,7 +6,7 @@ unpckr is a cli tool that collects all files from sources into a single director
 
 unpckr has built-in usage:
 
-```cmd
+```text
 usage: unpckr-cli [-h|--help] -s|--source "<value>" [-s|--source "<value>" ...]
                   [-d|--dest "<value>"] [-c|--conflict-rename (simpleRandom)]
                   [-r|--rename-all (hash|none)] [-p|--pattern "<value>"]
@@ -38,7 +38,7 @@ Arguments:
 
 In this example, we are asking unpckr to collect files from two sources into the `D:\MyPhotos` folder. Rename all files using the -r key. Using `--remove-duplicates` to remove all duplicates (by hash). Also unzip all archives that will be inside the sources
 
-```cmd
+```text
 unpckr -s "C:\Users\Folder with Whitespace\photos" -s D:\files\photos\holidays -d D:\MyPhotos -r hash --remove-duplicates --unzip
 ```
 
@@ -72,7 +72,7 @@ You can always use `unpckr -h` or `unpckr --help` to get actual list of keys and
 8. ~~Advanced patterns support~~
 9. Logging
 10. ~~Write operations order in README~~
-11. Release 1.0
+11. ~~Release 1.0~~
 12. Comment all functions
 13. Fatal log for copier functions
 14. Move some packages to pkg folder
