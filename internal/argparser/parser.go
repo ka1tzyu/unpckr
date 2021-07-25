@@ -70,6 +70,12 @@ func ParseArguments(args []string, cfg *config.ConfigurationType) (argparse.Pars
 			Help:     "How many times pass the source files for unzip",
 			Default:  1,
 		})
+	cfg.RemoveSources = parser.Flag("", "remove-sources",
+		&argparse.Options{
+			Required: false,
+			Help:     "If enabled delete all sources after work",
+			Default:  false,
+		})
 
 	err := parser.Parse(args)
 

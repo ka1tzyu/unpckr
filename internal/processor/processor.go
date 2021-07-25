@@ -2,6 +2,7 @@ package processor
 
 import (
 	"fmt"
+
 	"github.com/nekovalue/unpckr/internal/config"
 	"github.com/nekovalue/unpckr/internal/copy"
 	"github.com/nekovalue/unpckr/internal/scanner"
@@ -28,7 +29,11 @@ func Process(config *config.ConfigurationType) error {
 		return err
 	}
 
-	cleaner()
+	if *config.RemoveSources {
+		cleanSources(*config)
+	}
+
+	cleanTemp()
 
 	fmt.Println("All work done!")
 
