@@ -47,11 +47,11 @@ unpckr -s "C:\Users\Folder with Whitespace\photos" -s D:\files\photos\holidays -
 1. Source scanning
 2. Generating destinations
 3. Process filters
-    3.1. Unzip
-    3.2. Duplicates removing
-    3.3. Pattern renaming
-    3.4. "Rename all" function
-    3.5. Conflicts renaming
+    - Unzip
+    - Duplicates removing
+    - Pattern renaming
+    - "Rename all" function
+    - Conflicts renaming
 4. Files coping
 5. Cleaning sources
 6. Cleaning temporary folder
