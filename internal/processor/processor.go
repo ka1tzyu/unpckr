@@ -35,7 +35,7 @@ func Process(config *config.ConfigurationType) error {
 
 	cleanTemp()
 
-	fmt.Println("All work done!")
+	fmt.Println("Files copied.")
 
 	return nil
 }
