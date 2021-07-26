@@ -2,6 +2,7 @@ package scanner
 
 import (
 	"github.com/nekovalue/unpckr/internal/config"
+	"github.com/nekovalue/unpckr/internal/logger"
 	"io/fs"
 	"path/filepath"
 )
@@ -13,6 +14,9 @@ func ScanSources(config *config.ConfigurationType) error {
 			return err
 		}
 	}
+
+	logger.Log.Info("Sources were scanned")
+
 	return nil
 }
 

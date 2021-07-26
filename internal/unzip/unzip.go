@@ -4,6 +4,7 @@ import (
 	"archive/zip"
 	"fmt"
 	"github.com/nekovalue/unpckr/internal/config"
+	"github.com/nekovalue/unpckr/internal/logger"
 	"github.com/nekovalue/unpckr/internal/rename"
 	"github.com/nekovalue/unpckr/internal/scanner"
 	"io"
@@ -24,6 +25,8 @@ func SourcesUnzip(config *config.ConfigurationType) {
 			_ = config.Storage.GenerateDestinations(*config.Destination)
 		}
 	}
+
+	logger.Log.Info("Sources were unzipped")
 }
 
 // Unzip all zips and returns map[zipPath]outputFolder
@@ -114,8 +117,11 @@ func scanZips(paths []string) []string {
 	for _, value := range paths {
 		if value[len(value)-4:] == ".zip" {
 			zips = append(zips, value)
+			logger.Log.Debugf("New zip was found {%s}", value)
 		}
 	}
+
+	logger.Log.Info("Archives were unzipped")
 
 	return zips
 }

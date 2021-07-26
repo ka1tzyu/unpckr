@@ -2,6 +2,7 @@ package duplicate
 
 import (
 	"github.com/nekovalue/unpckr/internal/config"
+	"github.com/nekovalue/unpckr/internal/logger"
 	"github.com/nekovalue/unpckr/internal/rename"
 )
 
@@ -12,7 +13,10 @@ func RemoveDuplicates(config *config.ConfigurationType) {
 	for _, value := range duplicatesToRemove {
 		config.Storage.RemoveStoragePairByIndex(value - indexOffset)
 		indexOffset++
+
+		logger.Log.Debugf("Duplicates found on %d", value-indexOffset)
 	}
+	logger.Log.Info("Duplicates removed")
 }
 
 // Returns duplicate indexes. It saves one element, that will be original file
@@ -27,6 +31,8 @@ func scanDuplicates(paths []string) []int {
 			candidatesToRemove = append(candidatesToRemove, i)
 		}
 	}
+
+	logger.Log.Info("Duplicates scanned")
 
 	return candidatesToRemove
 }

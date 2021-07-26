@@ -2,6 +2,7 @@ package storage
 
 import (
 	"fmt"
+	"github.com/nekovalue/unpckr/internal/logger"
 	"github.com/nekovalue/unpckr/internal/tools"
 	"os"
 	"strings"
@@ -14,10 +15,12 @@ type Storage struct {
 
 func (store *Storage) AppendSource(source string) {
 	store.Sources = append(store.Sources, source)
+	logger.Log.Debugf("New source {%s} was appended", source)
 }
 
 func (store *Storage) AppendDestination(destination string) {
 	store.Destinations = append(store.Destinations, destination)
+	logger.Log.Debugf("New destination {%s} was appended", destination)
 }
 
 // RemoveStoragePairByIndex Removes pair of Destination and Source
@@ -28,6 +31,7 @@ func (store *Storage) RemoveStoragePairByIndex(i int) {
 
 func (store *Storage) ClearStorageDestinations() {
 	store.Destinations = []string{}
+	logger.Log.Debug("Storage Destinations were cleared")
 }
 
 func (store *Storage) GenerateDestinations(path string) error {
@@ -36,6 +40,9 @@ func (store *Storage) GenerateDestinations(path string) error {
 		dest := path + string(os.PathSeparator) + filename[len(filename)-1]
 		store.AppendDestination(dest)
 	}
+
+	logger.Log.Debug("Destinations were generated")
+
 	return nil
 }
 

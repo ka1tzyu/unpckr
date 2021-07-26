@@ -1,9 +1,11 @@
 package copy
 
 import (
-	"github.com/nekovalue/unpckr/internal/config"
 	"io"
 	"os"
+
+	"github.com/nekovalue/unpckr/internal/config"
+	"github.com/nekovalue/unpckr/internal/logger"
 )
 
 func WorkAll(config *config.ConfigurationType) error {
@@ -13,6 +15,9 @@ func WorkAll(config *config.ConfigurationType) error {
 			return err
 		}
 	}
+
+	logger.Log.Info("All files was copied")
+
 	return nil
 }
 
@@ -23,7 +28,10 @@ func singleCopy(src, dst string) error {
 	}
 
 	defer func(originalFile *os.File) {
-		_ = originalFile.Close()
+		err = originalFile.Close()
+		if err != nil {
+			logger.Log.Fatal(err)
+		}
 	}(originalFile)
 
 	newFile, err := os.Create(dst)
@@ -32,13 +40,18 @@ func singleCopy(src, dst string) error {
 	}
 
 	defer func(newFile *os.File) {
-		_ = newFile.Close()
+		err = newFile.Close()
+		if err != nil {
+			logger.Log.Fatal(err)
+		}
 	}(newFile)
 
 	_, err = io.Copy(newFile, originalFile)
 	if err != nil {
 		return err
 	}
+
+	logger.Log.Debugf("{%s} was copied to {%s}", src, dst)
 
 	return nil
 }

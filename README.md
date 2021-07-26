@@ -70,10 +70,10 @@ You can always use `unpckr -h` or `unpckr --help` to get actual list of keys and
 6. ~~Duplicate remove function~~
 7. ~~Integrate GitHub Actions~~
 8. ~~Advanced patterns support~~
-9. Logging
+9. ~~Logging~~
 10. ~~Write operations order in README~~
 11. ~~Release 1.0~~
 12. Comment all functions
-13. Fatal log for copier functions
+13. ~~Fatal log for copier functions~~
 14. Move some packages to pkg folder
 15. Unit tests for all filters

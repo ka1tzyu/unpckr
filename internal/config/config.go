@@ -6,8 +6,6 @@ import (
 	"github.com/nekovalue/unpckr/internal/storage"
 )
 
-var CONFIG ConfigurationType
-
 type ConfigurationType struct {
 	Storage          storage.Storage
 	Sources          *[]string

@@ -18,6 +18,3 @@ func destinationFolderValidate(args []string) error {
 	}
 	return nil
 }
-func patternValidate(args []string) error {
-	return nil
-}

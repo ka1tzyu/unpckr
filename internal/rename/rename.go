@@ -2,6 +2,7 @@ package rename
 
 import (
 	"github.com/nekovalue/unpckr/internal/config"
+	"github.com/nekovalue/unpckr/internal/logger"
 	"strings"
 )
 
@@ -18,8 +19,12 @@ func RandomizeConflicts(config *config.ConfigurationType) {
 			newFileName := strings.Join(newFileNameParts[0:len(newFileNameParts)-1], ".") + "__" +
 				generateRandomString(10, i) + "." + newFileNameParts[len(newFileNameParts)-1]
 			config.Storage.Destinations[i] = newFileName
+
+			logger.Log.Debugf("New name {%s} was assigned", newFileName)
 		}
 	}
+
+	logger.Log.Info("Conflicts were randomized")
 }
 
 func HashingDestinations(config *config.ConfigurationType) error {
@@ -30,7 +35,11 @@ func HashingDestinations(config *config.ConfigurationType) error {
 		newFileName := GetPathWithoutFileName(value) + hash + "." + newFileNameParts[len(newFileNameParts)-1]
 
 		config.Storage.Destinations[i] = newFileName
+
+		logger.Log.Debugf("New name {%s} was assigned", newFileName)
 	}
+
+	logger.Log.Info("Destination names were hashed")
 
 	return nil
 }

@@ -36,7 +36,6 @@ func ParseArguments(args []string, cfg *config.ConfigurationType) (argparse.Pars
 	cfg.Pattern = parser.String("p", "pattern",
 		&argparse.Options{
 			Required: false,
-			Validate: patternValidate,
 			Help:     "Rename all files trough specified pattern",
 			Default:  "none",
 		})
@@ -46,7 +45,7 @@ func ParseArguments(args []string, cfg *config.ConfigurationType) (argparse.Pars
 			Help:     "Show logging stream",
 			Default:  false,
 		})
-	cfg.LogLevel = parser.Selector("", "log-level", []string{"INFO", "WARN", "none"},
+	cfg.LogLevel = parser.Selector("", "log-level", []string{"DEBUG", "INFO", "WARN", "ERROR", "none"},
 		&argparse.Options{
 			Required: false,
 			Help:     "Logging level",

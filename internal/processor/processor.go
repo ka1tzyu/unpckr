@@ -1,8 +1,6 @@
 package processor
 
 import (
-	"fmt"
-
 	"github.com/nekovalue/unpckr/internal/config"
 	"github.com/nekovalue/unpckr/internal/copy"
 	"github.com/nekovalue/unpckr/internal/scanner"
@@ -24,6 +22,8 @@ func Process(config *config.ConfigurationType) error {
 		return err
 	}
 
+	makeDestination(*config.Destination)
+
 	err = copy.WorkAll(config)
 	if err != nil {
 		return err
@@ -34,8 +34,6 @@ func Process(config *config.ConfigurationType) error {
 	}
 
 	cleanTemp()
-
-	fmt.Println("Files copied.")
 
 	return nil
 }
