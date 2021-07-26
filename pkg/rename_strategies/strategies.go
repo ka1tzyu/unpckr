@@ -1,4 +1,4 @@
-package rename
+package rename_strategies
 
 import (
 	"crypto/md5"

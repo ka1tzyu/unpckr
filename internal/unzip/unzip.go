@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"github.com/nekovalue/unpckr/internal/config"
 	"github.com/nekovalue/unpckr/internal/logger"
-	"github.com/nekovalue/unpckr/internal/rename"
 	"github.com/nekovalue/unpckr/internal/scanner"
+	path2 "github.com/nekovalue/unpckr/pkg/path"
 	"io"
 	"os"
 	"path/filepath"
@@ -42,7 +42,7 @@ func filesUnzip(zips []string) map[string]string {
 
 // Unzip single archive, returns (outputPath, error)
 func fileUnzip(path string) (string, error) {
-	dest := "__tmp__" + string(os.PathSeparator) + rename.GetFileNameWithoutExtensionFromPath(path)
+	dest := "__tmp__" + string(os.PathSeparator) + path2.GetFileNameWithoutExtensionFromPath(path)
 
 	r, err := zip.OpenReader(path)
 	if err != nil {

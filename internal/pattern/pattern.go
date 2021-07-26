@@ -2,11 +2,11 @@ package pattern
 
 import (
 	"github.com/nekovalue/unpckr/internal/logger"
+	"github.com/nekovalue/unpckr/pkg/path"
 	"strconv"
 	"strings"
 
 	"github.com/nekovalue/unpckr/internal/config"
-	"github.com/nekovalue/unpckr/internal/rename"
 )
 
 func RenameByPattern(pattern string, config *config.ConfigurationType) {
@@ -15,7 +15,7 @@ func RenameByPattern(pattern string, config *config.ConfigurationType) {
 			extParts := strings.Split(config.Storage.Destinations[i], ".")
 			ext := "." + extParts[len(extParts)-1]
 			config.Storage.Destinations[i] =
-				rename.GetPathWithoutFileName(config.Storage.Destinations[i]) + strconv.Itoa(i) + ext
+				path.GetPathWithoutFileName(config.Storage.Destinations[i]) + strconv.Itoa(i) + ext
 
 			logger.Log.Debugf("New name {%s} was assigned", config.Storage.Destinations[i])
 		}
@@ -26,7 +26,7 @@ func RenameByPattern(pattern string, config *config.ConfigurationType) {
 				ext := "." + extParts[len(extParts)-1]
 				name := strings.Replace(pattern, "%n", strconv.Itoa(i), 1)
 				config.Storage.Destinations[i] =
-					rename.GetPathWithoutFileName(config.Storage.Destinations[i]) + name + ext
+					path.GetPathWithoutFileName(config.Storage.Destinations[i]) + name + ext
 				logger.Log.Debugf("New name {%s} was assigned", config.Storage.Destinations[i])
 			}
 		}

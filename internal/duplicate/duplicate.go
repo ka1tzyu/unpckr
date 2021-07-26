@@ -3,7 +3,7 @@ package duplicate
 import (
 	"github.com/nekovalue/unpckr/internal/config"
 	"github.com/nekovalue/unpckr/internal/logger"
-	"github.com/nekovalue/unpckr/internal/rename"
+	"github.com/nekovalue/unpckr/pkg/rename_strategies"
 )
 
 func RemoveDuplicates(config *config.ConfigurationType) {
@@ -25,7 +25,7 @@ func scanDuplicates(paths []string) []int {
 	var candidatesToRemove []int
 
 	for i, value := range paths {
-		hashed, _ := rename.HashFileMD5(value)
+		hashed, _ := rename_strategies.HashFileMD5(value)
 		repeats[hashed]++
 		if repeats[hashed] > 1 {
 			candidatesToRemove = append(candidatesToRemove, i)

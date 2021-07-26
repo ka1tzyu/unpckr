@@ -1,11 +1,11 @@
-package rename
+package random
 
 import (
 	"math/rand"
 	"time"
 )
 
-func generateRandomString(length int, seedAppend int) string {
+func GenerateRandomString(length int, seedAppend int) string {
 	password := ""
 
 	characters := "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM123456789!@#$%&"

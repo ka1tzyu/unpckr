@@ -3,7 +3,7 @@ package storage
 import (
 	"fmt"
 	"github.com/nekovalue/unpckr/internal/logger"
-	"github.com/nekovalue/unpckr/internal/tools"
+	tools2 "github.com/nekovalue/unpckr/pkg/tools"
 	"os"
 	"strings"
 )
@@ -25,8 +25,8 @@ func (store *Storage) AppendDestination(destination string) {
 
 // RemoveStoragePairByIndex Removes pair of Destination and Source
 func (store *Storage) RemoveStoragePairByIndex(i int) {
-	store.Sources = tools.RemoveSliceElementByIndex(store.Sources, i)
-	store.Destinations = tools.RemoveSliceElementByIndex(store.Destinations, i)
+	store.Sources = tools2.RemoveSliceElementByIndex(store.Sources, i)
+	store.Destinations = tools2.RemoveSliceElementByIndex(store.Destinations, i)
 }
 
 func (store *Storage) ClearStorageDestinations() {

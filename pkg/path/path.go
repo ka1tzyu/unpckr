@@ -1,4 +1,4 @@
-package rename
+package path
 
 import (
 	"os"
