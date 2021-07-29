@@ -5,6 +5,7 @@ import (
 	"github.com/nekovalue/unpckr/internal/config"
 )
 
+// ParseArguments is used to process arguments and pass data to config
 func ParseArguments(args []string, cfg *config.ConfigurationType) (argparse.Parser, error) {
 	parser := argparse.NewParser("unpckr-cli", "Provides some unpacking functions")
 

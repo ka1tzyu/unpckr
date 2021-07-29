@@ -9,6 +9,7 @@ import (
 	"github.com/nekovalue/unpckr/internal/config"
 )
 
+// RenameByPattern renames files by specified pattern
 func RenameByPattern(pattern string, config *config.ConfigurationType) {
 	if pattern == "numeric" {
 		for i := range config.Storage.Destinations {

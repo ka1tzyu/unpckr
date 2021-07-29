@@ -73,7 +73,7 @@ You can always use `unpckr -h` or `unpckr --help` to get actual list of keys and
 9. ~~Logging~~
 10. ~~Write operations order in README~~
 11. ~~Release 1.0~~
-12. Comment all functions
+12. ~~Comment all functions~~
 13. ~~Fatal log for copier functions~~
 14. ~~Move some packages to pkg folder~~
 15. Unit tests for all filters

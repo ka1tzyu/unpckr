@@ -6,6 +6,7 @@ import (
 	"github.com/nekovalue/unpckr/internal/scanner"
 )
 
+// Process does all work that consists of scanning, generating, process filters, copying, cleaning and making folders
 func Process(config *config.ConfigurationType) error {
 	err := scanner.ScanSources(config)
 	if err != nil {

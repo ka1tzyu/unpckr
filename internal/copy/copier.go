@@ -8,6 +8,7 @@ import (
 	"github.com/nekovalue/unpckr/internal/logger"
 )
 
+// WorkAll copies all files from [config.Storage.Sources] to [config.Storage.Destinations]
 func WorkAll(config *config.ConfigurationType) error {
 	for i, src := range config.Storage.Sources {
 		err := singleCopy(src, config.Storage.Destinations[i])
@@ -21,6 +22,7 @@ func WorkAll(config *config.ConfigurationType) error {
 	return nil
 }
 
+// Copy one file from [src] to [dst]
 func singleCopy(src, dst string) error {
 	originalFile, err := os.Open(src)
 	if err != nil {

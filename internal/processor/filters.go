@@ -8,6 +8,7 @@ import (
 	"github.com/nekovalue/unpckr/internal/unzip"
 )
 
+// Checks and process all filters by config settings
 func checkFilters(config *config.ConfigurationType) error {
 	if *config.Unzip {
 		unzip.SourcesUnzip(config)

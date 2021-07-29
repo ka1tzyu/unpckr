@@ -9,6 +9,7 @@ import (
 	"strings"
 )
 
+// RandomizeConflicts add to destinations with name conflict random string to evade rewriting
 func RandomizeConflicts(config *config.ConfigurationType) {
 	repeats := make(map[string]int)
 
@@ -30,6 +31,7 @@ func RandomizeConflicts(config *config.ConfigurationType) {
 	logger.Log.Info("Conflicts were randomized")
 }
 
+// HashingDestinations modifies all destinations to their source`s md5 hash
 func HashingDestinations(config *config.ConfigurationType) error {
 	for i, value := range config.Storage.Destinations {
 		hash, _ := rename_strategies.HashFileMD5(config.Storage.Sources[i])

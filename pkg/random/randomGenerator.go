@@ -5,6 +5,7 @@ import (
 	"time"
 )
 
+// GenerateRandomString returns random string with given length
 func GenerateRandomString(length int, seedAppend int) string {
 	password := ""
 

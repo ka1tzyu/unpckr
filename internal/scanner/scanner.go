@@ -7,6 +7,7 @@ import (
 	"path/filepath"
 )
 
+// ScanSources scans all sources from [config.Sources]
 func ScanSources(config *config.ConfigurationType) error {
 	for _, src := range *config.Sources {
 		err := ScanDirectory(src, config)
@@ -20,6 +21,7 @@ func ScanSources(config *config.ConfigurationType) error {
 	return nil
 }
 
+// ScanDirectory walks through source folders and append files to [config.Storage.Sources]
 func ScanDirectory(dir string, config *config.ConfigurationType) error {
 	err := filepath.WalkDir(dir, func(path string, d fs.DirEntry, err error) error {
 		if err == nil {

@@ -13,7 +13,7 @@ import (
 	"strings"
 )
 
-// SourcesUnzip Pass file unzipping, removes zip files from source, scan new sources
+// SourcesUnzip passes file unzipping, removes zip files from source, scan new sources
 func SourcesUnzip(config *config.ConfigurationType) {
 	for i := 0; i < *config.UnzipPasses; i++ {
 		zips := scanZips(config.Storage.Sources)

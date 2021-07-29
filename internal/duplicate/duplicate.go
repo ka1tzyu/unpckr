@@ -6,6 +6,7 @@ import (
 	"github.com/nekovalue/unpckr/pkg/rename_strategies"
 )
 
+// RemoveDuplicates removing all files with same hash received from scanDuplicates
 func RemoveDuplicates(config *config.ConfigurationType) {
 	duplicatesToRemove := scanDuplicates(config.Storage.Sources)
 
