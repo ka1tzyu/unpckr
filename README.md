@@ -2,7 +2,7 @@
 
 unpckr is a cli tool that collects all files from sources into a single directory according to the specified rules
 
-## !!! About anti-virus attention
+## !!! About anti-virus attention !!!
 
 Your anti-virus (even Windows Defender) may decide that unpckr is a virus. Of course it`s not. It happens because one of the libraries get access to your file system for copying, removing and renaming files. So exactly it call warnings. unpckr is an open-source project and you can see whole code base in GitHub. If you want, you can build app from sources
 
