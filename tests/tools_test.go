@@ -17,6 +17,11 @@ func TestRemoveSliceElementByIndex(t *testing.T) {
 			indexToRemove: 0,
 			expectedSlice: []string{"second", "third"},
 		},
+		{
+			fakeSlice:     []string{"foxy", "kitten", "george", "summary"},
+			indexToRemove: 1,
+			expectedSlice: []string{"foxy", "george", "summary"},
+		},
 	}
 
 	// Act

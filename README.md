@@ -2,6 +2,10 @@
 
 unpckr is a cli tool that collects all files from sources into a single directory according to the specified rules
 
+## !!! About anti-virus attention !!!
+
+Your anti-virus (even Windows Defender) may decide that unpckr is a virus. Of course it`s not. It happens because one of the libraries get access to your file system for copying, removing and renaming files. So exactly it call warnings. unpckr is an open-source project and you can see whole code base in GitHub. If you want, you can build app from sources
+
 ## Usage
 
 unpckr has built-in usage:
@@ -59,23 +63,3 @@ unpckr -s "C:\Users\Folder with Whitespace\photos" -s D:\files\photos\holidays -
 ## Help
 
 You can always use `unpckr -h` or `unpckr --help` to get actual list of keys and settings. Also, you can ask me everything trough [Issues](https://github.com/nekovalue/unpckr/issues)
-
-## TODO
-
-1. ~~Unit tests for *Argument parser*~~
-2. ~~Copier closure handler~~
-3. ~~Conflict rename function~~
-4. ~~Rename all function~~
-5. ~~Unzip function~~
-6. ~~Duplicate remove function~~
-7. ~~Integrate GitHub Actions~~
-8. ~~Advanced patterns support~~
-9. ~~Logging~~
-10. ~~Write operations order in README~~
-11. ~~Release 1.0~~
-12. ~~Comment all functions~~
-13. ~~Fatal log for copier functions~~
-14. ~~Move some packages to pkg folder~~
-15. ~~Unit tests for all filters~~
-
-# PROJECT FINISHED
